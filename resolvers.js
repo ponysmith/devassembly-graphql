@@ -16,6 +16,7 @@ export const resolvers = {
   },
 
   Favorites: {
-    albums: (obj, args, ctx) => ctx.db.albums.getAlbums(obj.albums).then( (result) => result)
+    albums: (obj, args, ctx) => ctx.db.albums.getAlbums(obj.albums).then( (result) => result),
+    artists: (obj, args, ctx) => ctx.db.artists.getArtists(obj.artists).then( (result) => result)
   }
 }
