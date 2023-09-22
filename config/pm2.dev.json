@@ -1,0 +1,11 @@
+{
+  "apps" : [{
+    "name": "graphql-dev-aassembly",
+    "script": "./dist/bundle.dev.js",
+    "watch": true,
+    "instances": 1,
+    "env": {
+      "NODE_ENV": "development"
+    }
+  }]
+}

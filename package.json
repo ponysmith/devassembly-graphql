@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@graphql-tools/schema": "^10.0.0",
+    "graphql": "^15.8.0",
+    "graphql-http": "^1.22.0",
+    "knex": "^2.5.1",
+    "koa": "^2.14.2",
+    "koa-graphql": "^0.12.0",
+    "koa-mount": "^4.0.0",
+    "redis": "^4.6.9",
+    "sqlite3": "^5.1.6"
+  },
+  "name": "graphql-dev-assembly",
+  "version": "1.0.0",
+  "description": "GraphQL sample",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --platform=node --packages=external --bundle --outfile=dist/bundle.dev.js --watch",
+    "start": "concurrently --kill-others \"npm run build\" \"pm2 start config/pm2.dev.json --no-daemon --watch\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.3"
+  }
+}
