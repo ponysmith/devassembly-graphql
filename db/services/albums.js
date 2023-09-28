@@ -3,9 +3,9 @@ class albumsService {
     this.connection = connection
   }
 
-  getAlbums = (ids = []) => {
+  getAlbums = (ids = null) => {
     const q = this.connection('albums').select('AlbumId as id', 'Title as title', 'ArtistId as artist_id')
-    if(ids.length > 0) {
+    if(Array.isArray(ids) && ids.length > 0) {
       const _ids = []
       Object.values(ids).forEach( (n) => _ids.push(parseInt(n) ) )
       q.whereIn('id', _ids )

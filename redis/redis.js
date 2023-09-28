@@ -1,11 +1,9 @@
-import { createClient } from 'redis';
+import Redis from 'ioredis';
 import { favoritesService } from './services/favorites';
 
-const client = createClient();
-client.connect()
-client.on('error', err => console.log('Redis Client Error', err));
+const _client = new Redis();
 
 export const redis = {
-  client: client,
-  favorites: new favoritesService(client)
+  client: _client,
+  favorites: new favoritesService(_client)
 }

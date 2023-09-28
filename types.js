@@ -27,7 +27,12 @@ export const typeDefs = /* GraphQL */ `
   type Favorites {
     username: String!
     albums(ids: [String!]): [Album]
-    artists: [Artist]
+    artists(ids: [String!]): [Artist]
   }
-  
+
+
+  type Mutation {
+    setFavorites(username: String!, albumIds: [Int], artistIds: [Int]): Favorites
+  }
+
 `

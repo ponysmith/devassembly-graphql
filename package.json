@@ -3,11 +3,11 @@
     "@graphql-tools/schema": "^10.0.0",
     "graphql": "^15.8.0",
     "graphql-http": "^1.22.0",
+    "ioredis": "^5.3.2",
     "knex": "^2.5.1",
     "koa": "^2.14.2",
     "koa-graphql": "^0.12.0",
     "koa-mount": "^4.0.0",
-    "redis": "^4.6.9",
     "sqlite3": "^5.1.6"
   },
   "name": "graphql-dev-assembly",

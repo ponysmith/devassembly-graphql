@@ -16,6 +16,12 @@ export const resolvers = {
   },
 
   Favorites: {
-    albums: (obj, args, ctx) => ctx.db.albums.getAlbums(obj.albums).then( (result) => result)
+    albums: (obj, args, ctx) => ctx.db.albums.getAlbums(obj.albums).then( (result) => result),
+    artists: (obj, args, ctx) => ctx.db.artists.getArtists(obj.artists).then( (result) => result)
+  },
+  
+  Mutation: { 
+    setFavorites: (obj, args, ctx) => ctx.redis.favorites.setFavorites(args).then( (result) => result)
   }
+
 }
