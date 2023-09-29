@@ -32,6 +32,24 @@ class favoritesService {
 
     return ret;
   }
+
+
+  remFavorites = async (args) => {
+    const favAlbumsKey = `${args.username}:favAlbums`;
+    const favArtistsKey = `${args.username}:favArtists`;
+
+    await this.client.srem(favAlbumsKey, args.albumIds)
+    await this.client.srem(favArtistsKey, args.artistIds)
+    
+    const ret = {
+      username: args.username,
+      albums: await this.client.smembers(favAlbumsKey),
+      artists: await this.client.smembers(favArtistsKey)
+    }
+
+    return ret;
+  }
+  
 }
 
 export { favoritesService }

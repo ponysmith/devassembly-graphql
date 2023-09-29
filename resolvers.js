@@ -21,7 +21,8 @@ export const resolvers = {
   },
   
   Mutation: { 
-    setFavorites: (obj, args, ctx) => ctx.redis.favorites.setFavorites(args).then( (result) => result)
+    setFavorites: (obj, args, ctx) => ctx.redis.favorites.setFavorites(args).then( (result) => result),
+    remFavorites: (obj, args, ctx) => ctx.redis.favorites.remFavorites(args).then( (result) => result)
   }
 
 }

@@ -33,6 +33,7 @@ export const typeDefs = /* GraphQL */ `
 
   type Mutation {
     setFavorites(username: String!, albumIds: [Int], artistIds: [Int]): Favorites
+    remFavorites(username: String!, albumIds: [Int], artistIds: [Int]): Favorites
   }
 
 `
