@@ -115,6 +115,28 @@ The app should be running on http://localhost:4000/graphql
 }
 ```
 
+### setFavorites
+```
+# Mutation to add favorites
+# username: required
+# albumIds: optional
+# artistIds: optional
+
+mutation{
+  setFavorites(username:"psmith", albumIds:[52,33], artistIds:[13,22] ) {
+    username
+    artists {
+      id
+      name
+    }
+    albums {
+      id
+      title
+    }
+  }
+}
+```
+
 ## Manually add some favorites to Redis
 
 You can add favorites via the Mutations. But if you want to add them manually you can do it directly in Redis:
